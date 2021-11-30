@@ -1,4 +1,4 @@
-// Массив товаров и цен на них
+// Массив товаров и цен
 const goods = [
   { title: 'Shirt', price: 150 },
   { title: 'Socks', price: 50 },
