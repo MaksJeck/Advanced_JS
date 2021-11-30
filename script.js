@@ -1,11 +1,10 @@
-// Массив товаров и цен
+// Массив товаров и цен на них
 const goods = [
   { title: 'Shirt', price: 150 },
   { title: 'Socks', price: 50 },
   { title: 'Jacket', price: 350 },
   { title: 'Shoes', price: 250 },
 ];
-
 
 class GoodsItem {
   constructor({ title = 'Shirt', price = 100 }) {
