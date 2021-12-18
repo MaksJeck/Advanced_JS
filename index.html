@@ -4,20 +4,41 @@
 <head>
    <meta charset="UTF-8">
    <title>eShop</title>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
    <script src="script.js"></script>
+   <script src="ReqExp.js"></script>
    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+   <div id="app">
+      <div v-if="basketVision" class="basket-box">
 
-   <header class="header">
-      <div class="container wrap">
-         <button class="cart-button" type="button">Корзина</button>
+         <h3>Корзина</h3>
+         <button v-on:click="closeBasket">Закрыть</button>
+
       </div>
-   </header>
-   <main class="content">
-      <div class="goods-list container"></div>
-   </main>
+      <header class="header">
+         <div class="container wrap">
+            <button class="cart-button" type="button" v-on:click="showBasket">Корзина</button>
+            <input type="text" v-model="search">
+            <button v-on:click="filter">искать</button>
+            <!-- <button v-on:click="showBasket">Корзина</button> -->
+            <!-- <button v-on:click="closeBasket">Закрыть</button> -->
+         </div>
+      </header>
+      <main class="content">
+         <div></div>
+         <div v-if="!!filteredGoods.length" class="goods-list container">
+            <div class="goods-item" v-for="item in filteredGoods">
+               <h3>{{item.title}}</h3>
+               <p> {{item.price}} </p>
+            </div>
+         </div>
+         <div v-else class="load">Нет данных</div>
+
+
+      </main>
    </div>
 </body>
 
